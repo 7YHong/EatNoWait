@@ -16,7 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
-import com.dreamstations.eatnowait.eatnowait.Adapter.MyPagerAdapter;
+import com.dreamstations.eatnowait.eatnowait.Adapter.Main_PagerAdapter;
 import com.dreamstations.eatnowait.eatnowait.R;
 
 import java.util.ArrayList;
@@ -39,8 +39,12 @@ public class Act_Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
 
-        //这里生成4个相同的Fragment玩
-        for (int i = 0; i < 4; i++)
+        //从Home开始，添加Fragment
+        fragments.add(new Frag_Home());
+        fragments.add(new Frag_Queue());
+
+        //这里生成相同的Fragment玩
+        for (int i = 0; i < 2; i++)
             fragments.add(Frag_simple.newInstance(R.layout.simple_frag_onebtn));
 
         initViews();
@@ -109,7 +113,7 @@ public class Act_Main extends AppCompatActivity {
 
 
         //设置PagerView
-        PagerAdapter pagerAdapter=new MyPagerAdapter(getSupportFragmentManager(),fragments);
+        PagerAdapter pagerAdapter=new Main_PagerAdapter(getSupportFragmentManager(),fragments);
         mViewPager.setAdapter(pagerAdapter);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
