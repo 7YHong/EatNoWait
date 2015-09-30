@@ -1,10 +1,12 @@
 package com.dreamstations.eatnowait.eatnowait.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +28,13 @@ public class Frag_Home extends Fragment implements ViewPager.OnPageChangeListene
     LinearLayout points;
     LinearLayout eaterys;
 
-    //开发时用
+//    由于layout需要在Stop的时候全remove掉
+//    因此需要保留他们
+//    以便于下次实例化的时候使用
     List<ImageView> titlepics;
     List<ImageView> listpics;
+
+    //开发时用
     int[] listpicsid={R.drawable.home_tingxiang,R.drawable.home_ganyi};
 
     private void initTempPics(){
@@ -68,17 +74,13 @@ public class Frag_Home extends Fragment implements ViewPager.OnPageChangeListene
         titlevp = (ViewPager) v.findViewById(R.id.home_titlevp);
         points= (LinearLayout) v.findViewById(R.id.home_vp_points);
         eaterys= (LinearLayout) v.findViewById(R.id.home_eaterys);
-        PagerAdapter vpAdapter=new Home_TitleVPAdapter(titlepics,getContext());
+        PagerAdapter vpAdapter=new Home_TitleVPAdapter(getContext(),titlepics);
         titlevp.setAdapter(vpAdapter);
         titlevp.addOnPageChangeListener(this);
 
-
-
         //由于VP的刷新问题尚未解决，因此这个方法是不完善的
         setTitlepics(titlepics);
-        //开发时用
         setListpics(listpics);
-
 
         return v;
     }
@@ -88,7 +90,7 @@ public class Frag_Home extends Fragment implements ViewPager.OnPageChangeListene
      * @param listpics
      */
     public void setListpics(List<ImageView> listpics) {
-        eaterys.removeAllViews();
+        eaterys.removeAllViewsInLayout();
         for (int i=0;i<listpics.size();i++){
             eaterys.addView(listpics.get(i));
         }
@@ -125,4 +127,17 @@ public class Frag_Home extends Fragment implements ViewPager.OnPageChangeListene
     public void onPageScrollStateChanged(int state) {
 
     }
+
+    /**
+     * 由于VP只保留3个实例，它会被Stop
+     * layout里的view必须释放掉，不然会报错
+     */
+    @Override
+    public void onStop() {
+        super.onStop();
+        System.out.println(Thread.currentThread().getStackTrace()[2].getMethodName());
+        eaterys.removeAllViews();
+        points.removeAllViews();
+    }
+
 }

@@ -3,11 +3,12 @@
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!-- toolbar（actionbar）颜色 -->
-        <item name="colorPrimary">#FE4D3B</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <!-- 状态栏颜色 -->
-        <item name="colorPrimaryDark">#CD2626</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!-- 窗口的背景颜色 -->
-        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+
     </style>
 
     <style name="AppTheme" parent="@style/AppBaseTheme"></style>

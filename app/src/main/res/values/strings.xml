@@ -2,6 +2,13 @@
     <string name="app_name">EatNoWait</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <color name="colorPrimary">#FE4D3B</color>
+    <color name="colorPrimaryDark">#CD2626</color>
+    <color name="windowBackground">#E6E7EB</color>
     <color name="bottombar">#F4F5F9</color>
+    <!--前两位表示透明度-->
+    <color name="recommond_board">#e0E1676A</color>
+    <color name="recommond_div">#F6DF08</color>
+    <color name="my_login_translucence">#80FFFFFF</color>
 </resources>

@@ -16,7 +16,7 @@ public class Home_TitleVPAdapter extends PagerAdapter{
     List<ImageView> views;
     Context context;
 
-    public Home_TitleVPAdapter(List<ImageView> views,Context context) {
+    public Home_TitleVPAdapter(Context context,List<ImageView> views) {
         this.views=views;
         this.context=context;
     }
@@ -25,14 +25,12 @@ public class Home_TitleVPAdapter extends PagerAdapter{
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         container.addView(views.get(position));
-        System.out.println("instantiateItem"+String.valueOf(position));
         return views.get(position);
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView(views.get(position));
-        System.out.println("destoryItem" + String.valueOf(position));
     }
 
     @Override

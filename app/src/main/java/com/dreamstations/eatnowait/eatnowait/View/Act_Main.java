@@ -42,10 +42,12 @@ public class Act_Main extends AppCompatActivity {
         //从Home开始，添加Fragment
         fragments.add(new Frag_Home());
         fragments.add(new Frag_Queue());
+        fragments.add(new Frag_Recommond());
+        fragments.add(new Frag_My());
 
-        //这里生成相同的Fragment玩
-        for (int i = 0; i < 2; i++)
-            fragments.add(Frag_simple.newInstance(R.layout.simple_frag_onebtn));
+//        //这里生成相同的Fragment玩
+//        for (int i = 0; i < 1; i++)
+//            fragments.add(Frag_simple.newInstance(R.layout.simple_frag_onebtn));
 
         initViews();
 
@@ -68,7 +70,7 @@ public class Act_Main extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_search) {
             return true;
         }
 
@@ -159,6 +161,7 @@ public class Act_Main extends AppCompatActivity {
     }
 
     public void setTitleData(String[] actions){
+        spinnerAdapter.clear();
         spinnerAdapter.addAll(actions);
     }
 
