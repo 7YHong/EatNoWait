@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,11 +48,35 @@
         <android.widget.Space
             android:layout_width="match_parent"
             android:layout_height="8dp" />
-        <include layout="@layout/my_item"/>
-        <include layout="@layout/my_item"/>
-        <include layout="@layout/my_item"/>
-        <include layout="@layout/my_item"/>
-        <include layout="@layout/my_item"/>
-        <include layout="@layout/my_item"/>
+        <com.dreamstations.eatnowait.eatnowait.View.Custom_My_Item
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:my_item_icon="@drawable/my_orders"
+            custom:my_item_text="我的订单"/>
+        <com.dreamstations.eatnowait.eatnowait.View.Custom_My_Item
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:my_item_icon="@drawable/my_chart"
+            custom:my_item_text="健康饮食"/>
+        <com.dreamstations.eatnowait.eatnowait.View.Custom_My_Item
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:my_item_icon="@drawable/my_report"
+            custom:my_item_text="消费报表"/>
+        <com.dreamstations.eatnowait.eatnowait.View.Custom_My_Item
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:my_item_icon="@drawable/my_record"
+            custom:my_item_text="退单记录"/>
+        <com.dreamstations.eatnowait.eatnowait.View.Custom_My_Item
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:my_item_icon="@drawable/my_settings"
+            custom:my_item_text="设置"/>
+        <com.dreamstations.eatnowait.eatnowait.View.Custom_My_Item
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:my_item_icon="@drawable/my_logout"
+            custom:my_item_text="注销"/>
     </LinearLayout>
 </ScrollView>

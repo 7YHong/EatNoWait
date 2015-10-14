@@ -8,10 +8,12 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:id="@+id/my_item_icon"
         android:src="@drawable/my_noaccount"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:id="@+id/my_item_text"
         android:layout_marginLeft="32sp"
         android:layout_gravity="bottom"
         android:text="未登录"

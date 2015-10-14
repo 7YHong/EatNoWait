@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="my_item_style">
+        <attr name="my_item_icon" format="reference"/>
+        <attr name="my_item_text" format="string"/>
+    </declare-styleable>
+</resources>
