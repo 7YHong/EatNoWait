@@ -28,7 +28,7 @@ public class Act_Main extends AppCompatActivity {
     Spinner mSpinner;
     ArrayAdapter<String> spinnerAdapter;
     ViewPager mViewPager;
-    LinearLayout bottombar;
+    BottomBar bottombar;
 
     //临时变量
     String[] actions = new String[] { "Bookmark", "Subscribe", "Share" };
@@ -80,7 +80,7 @@ public class Act_Main extends AppCompatActivity {
     private void initViews(){
         mViewPager= (ViewPager) findViewById(R.id.viewpager);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        bottombar = (LinearLayout) findViewById(R.id.bottomtab);
+        bottombar = (BottomBar) findViewById(R.id.bottomtab);
         /**
          * Toolbar部分的设置
          */
@@ -125,7 +125,8 @@ public class Act_Main extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                syncBottomStatus(position);
+//                syncBottomStatus(position);
+                bottombar.setSelect(position);
             }
 
             @Override
@@ -133,32 +134,39 @@ public class Act_Main extends AppCompatActivity {
 
             }
         });
-        findViewById(R.id.bottomtab_1).setSelected(true);
+
+        bottombar.setListener(new BottomBar.OnSelectChangedListener() {
+            @Override
+            public void onSelect(int index) {
+                mViewPager.setCurrentItem(index);
+            }
+        });
+//        findViewById(R.id.bottomtab_1).setSelected(true);
 
     }
 
-    private void syncBottomStatus(int position) {
-        for (int i=0;i<bottombar.getChildCount();i++){
-            if(i==position) {
-                bottombar.getChildAt(i).setSelected(true);
-            }else bottombar.getChildAt(i).setSelected(false);
+//    private void syncBottomStatus(int position) {
+//        for (int i=0;i<bottombar.getChildCount();i++){
+//            if(i==position) {
+//                bottombar.getChildAt(i).setSelected(true);
+//            }else bottombar.getChildAt(i).setSelected(false);
+//
+//        }
+//    }
 
-        }
-    }
-
-    public void onBottomIconClick(View v){
-
-        switch (v.getId()){
-            case R.id.bottomtab_1:mViewPager.setCurrentItem(0);
-                break;
-            case R.id.bottomtab_2:mViewPager.setCurrentItem(1);
-                break;
-            case R.id.bottomtab_3:mViewPager.setCurrentItem(2);
-                break;
-            case R.id.bottomtab_4:mViewPager.setCurrentItem(3);
-                break;
-        }
-    }
+//    public void onBottomIconClick(View v){
+//
+//        switch (v.getId()){
+//            case R.id.bottomtab_1:mViewPager.setCurrentItem(0);
+//                break;
+//            case R.id.bottomtab_2:mViewPager.setCurrentItem(1);
+//                break;
+//            case R.id.bottomtab_3:mViewPager.setCurrentItem(2);
+//                break;
+//            case R.id.bottomtab_4:mViewPager.setCurrentItem(3);
+//                break;
+//        }
+//    }
 
     public void setTitleData(String[] actions){
         spinnerAdapter.clear();

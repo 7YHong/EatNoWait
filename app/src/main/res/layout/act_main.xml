@@ -10,12 +10,19 @@
         layout="@layout/toolbar"
         android:id="@+id/toolbar" />
 
-    <include
-        layout="@layout/bottombar"
-        android:id="@+id/bottomtab"
-        android:layout_alignParentBottom="true"
+    <!--<include-->
+        <!--layout="@layout/bottombar"-->
+        <!--android:id="@+id/bottomtab"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="56sp"/>-->
+    <com.dreamstations.eatnowait.eatnowait.View.BottomBar
         android:layout_width="match_parent"
-        android:layout_height="56sp"/>
+        android:layout_height="56sp"
+        android:id="@+id/bottomtab"
+        android:layout_alignParentBottom="true">
+
+    </com.dreamstations.eatnowait.eatnowait.View.BottomBar>
 
 
 

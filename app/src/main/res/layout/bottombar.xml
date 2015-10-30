@@ -8,28 +8,24 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:id="@+id/bottomtab_1"
-        android:onClick="onBottomIconClick"
+        android:id="@+id/bottom_0"
         android:src="@drawable/bottom_home"/>
     <ImageView
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:id="@+id/bottomtab_2"
-        android:onClick="onBottomIconClick"
+        android:id="@+id/bottom_1"
         android:src="@drawable/bottom_queue"/>
     <ImageView
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:id="@+id/bottomtab_3"
-        android:onClick="onBottomIconClick"
+        android:id="@+id/bottom_2"
         android:src="@drawable/bottom_recommond"/>
     <ImageView
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:id="@+id/bottomtab_4"
-        android:onClick="onBottomIconClick"
+        android:id="@+id/bottom_3"
         android:src="@drawable/bottom_mine"/>
 </LinearLayout>
